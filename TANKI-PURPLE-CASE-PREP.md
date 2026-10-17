@@ -29,6 +29,21 @@ Folder 05 holds test coupons and alternates. None of them are required parts.
 | Grey   | 1   | ESP-screen riser (86×50 base, 50.8mm tall) |
 | Green  | 1   | Toast CENTER floor (167.4 × 146.88 × 2.8mm) |
 
+### STL check (17 Oct 2026): all 23 files uploaded
+Every file is one closed body with no bad triangles, and every file fits the 180mm bed.
+
+- R3 top 167.4 × 150.4 × 16.2. Window 72.4 × 53.2 at X 46.9 / Y 27.4.
+  The file adds a 2mm front lip, so its Y origin sits 2mm forward of the case.
+  Four 3.4mm holes, 78 × 42 apart, which lines up with the riser posts.
+  The webs between the holes and the window are 1.1mm.
+- Walls: front/rear 167.4 × 2.4 × 53.8 (print standing up), left/right 142.08 × 53.8 × 2.4 (print flat).
+- Riser: 2.4 base + 50.8 posts + 2mm tips. Posts 78 × 42 apart.
+- Identical copies: 4 bearing caps, 4 feet, 2 bottom keepers, 2 top keepers.
+  The **top and bottom keepers differ** (10.75 vs 10.45mm), so label them.
+- Tall prints: the backplate is 167.4mm tall upright and the hatch is 79.6mm tall on its edge.
+  Use a brim and the supplied orientations.
+- A fully solid set would weigh about 330 g. Real prints with infill will be lighter.
+
 ## 4. Before printing the full R3 roof
 - [ ] Measure the already-glued small screen and the wall datums
 - [ ] Print the R3 corner coupon (~42 min, 8.5 g) and test-fit it
