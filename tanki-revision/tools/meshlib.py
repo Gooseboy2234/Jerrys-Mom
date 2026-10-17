@@ -32,8 +32,11 @@ def to_trimesh(m):
 
 def save(m, name):
     tm = to_trimesh(m)
-    tm.update_faces(tm.nondegenerate_faces(height=1e-6))
+    # Weld float32 round-off, then drop only faces whose corners collapsed together.
+    # (Thin-but-valid needle triangles must stay or the surface opens up.)
     tm.merge_vertices(digits_vertex=5)
+    f = tm.faces
+    tm.update_faces((f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2]))
     tm.remove_unreferenced_vertices()
     tm.export(os.path.join(OUT, name))
     return tm
