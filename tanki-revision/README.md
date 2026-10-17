@@ -7,14 +7,18 @@ Changes from Ethan's current build (R2 walls/lid/hinges + R3 roof):
 2. **4 mm 45° bevels** on all four vertical corners, from the floor up through the walls,
    roof and lid. The lid's front, left and right top edges are beveled too; the hinge edge
    stays square so the hinges and their 105° stop are untouched.
-3. **Front USB/Ethernet opening moved 3.2 mm left** (now X 93.8–161.8) so the
+3. **Screen opens to 120° instead of 106°.** The lid's centre hinge tab lands on a small
+   stop block on each roof hinge base. Both blocks moved 2.1 mm forward
+   (`tools/hinge_stop.py <angle>` re-runs it). Keep it under ~125°: past that the lid's
+   rear edge reaches the back of the hinge seats.
+4. **Front USB/Ethernet opening moved 3.2 mm left** (now X 93.8–161.8) so the
    front-right corner bevel stays solid. The Pi now sits further back.
 
 ## Files (`revised/`, kept out of git)
 
 | Part | File | Notes |
 |---|---|---|
-| Roof (R3) | `02_R3_top_vents_back_20mm_bevel4` | Vents moved + corner bevels. Replaces the R3 roof. |
+| Roof (R3) | `02_R3_top_vents_back_20mm_bevel4_open120` | **Print this one.** Vents moved, corner bevels, stop blocks moved for 120°. Replaces the R3 roof. (`..._bevel4` without `open120` is the same roof with the original 106° stop.) |
 | 7" lid | `01_7in_lid_bevel4` | Corner and top-edge bevels, plus ~1.5 cm³ of reinforcement inside so the 1.2 mm rims don't open up |
 | Front wall | `03_Front_wall_bevel4_port_left3.2` | End bevels, port moved, small reinforcing blocks inside the corners. **Prints flat**. |
 | Rear wall | `04_Rear_wall_bevel4` | End bevels + inside corner blocks. **Prints flat**. |
@@ -30,6 +34,10 @@ Every other part keeps its original print orientation. The assembled box was che
 nothing pokes outside the beveled outline and no two parts overlap.
 
 ## Things to check on the real build
+
+- **Tipping at 120°.** With the screen open, the lid's weight sits about 28 mm behind the
+  rear edge. The box only tips back if the lid outweighs the base by about 2.7x
+  (estimated with a 200 g display), so it should be fine.
 
 - **Front-left inside corner.** The new block stays at X ≤ 3.6, 0.3 mm short of the
   nominal edge of the glued screen/riser (X 3.9). If yours sits closer to the left wall, trim the block.
@@ -47,5 +55,6 @@ nothing pokes outside the beveled outline and no two parts overlap.
 ## Tools
 
 `tools/` regenerates everything from Ethan's originals in `original/`:
-`move_roof_vents.py`, then `bevel_case.py`. `assemble.py` places the parts in the case
+`move_roof_vents.py`, then `bevel_case.py`, then `hinge_stop.py 120`. `hinge_sweep.py` rotates
+the lid about its pivot axis (case Y 142.884, Z 70.0) to find the angle where it first touches anything. `assemble.py` places the parts in the case
 frame, and `stlcheck.py` runs the mesh checks. Needs `trimesh manifold3d shapely networkx`.
