@@ -16,14 +16,17 @@ Changes from Ethan's current build (R2 walls/lid/hinges + R3 roof):
 |---|---|---|
 | Roof (R3) | `02_R3_top_vents_back_20mm_bevel4` | Vents moved + corner bevels. Replaces the R3 roof. |
 | 7" lid | `01_7in_lid_bevel4` | Corner and top-edge bevels, plus ~1.5 cm³ of reinforcement inside so the 1.2 mm rims don't open up |
-| Front wall | `03_Front_wall_bevel4_port_left3.2` | End bevels, port moved, small reinforcing blocks inside the corners |
-| Rear wall | `04_Rear_wall_bevel4` | End bevels + inside corner blocks |
+| Front wall | `03_Front_wall_bevel4_port_left3.2` | End bevels, port moved, small reinforcing blocks inside the corners. **Prints flat**. |
+| Rear wall | `04_Rear_wall_bevel4` | End bevels + inside corner blocks. **Prints flat**. |
 | Left / right walls | `05_Left_wall_bevel4`, `06_Right_wall_bevel4` | Only change: a 1.6 mm 45° sliver off the **outer** vertical edge at each end. Reprint, **or sand the glued walls in place**. |
 | Floor | `Green_toast_bottom_bevel4` | 4 mm corner bevels. Reprint, **or sand/cut the corners** of the existing floor. |
 | Everything else | unchanged | Hatch, bearing caps, tab keepers, bumper, feet, antenna holder, riser |
 
-Every revised file is a single closed body with no bad triangles, fits the A1 mini bed and
-keeps its original print orientation. The assembled box was checked in `tools/assemble.py`:
+Every revised file is a single closed body with no bad triangles and fits the A1 mini bed.
+All four walls print **flat**. The front and rear walls go outer face down with the corner blocks
+pointing up, so the only overhangs are the 45° end bevels (about 350 mm² vs ~2,100 mm² standing up).
+The side walls keep Ethan's flat orientation (outer face up, no overhangs).
+Every other part keeps its original print orientation. The assembled box was checked in `tools/assemble.py`:
 nothing pokes outside the beveled outline and no two parts overlap.
 
 ## Things to check on the real build

@@ -61,7 +61,8 @@ def check(m, name):
 
 
 def end_walls(name, out, port_shift=0.0, fl_clip=None):
-    """Front/rear wall. Print coords: x along the wall, y = depth from OUTER face, z up.
+    """Front/rear wall. Edited in Ethan's upright coords (x along the wall, y = depth from
+    the OUTER face, z up), then laid flat for printing.
 
     The front wall is in case coordinates as printed; the rear wall is the same shape
     rotated 180 degrees about Z when installed (its icons read correctly from y=0).
@@ -81,6 +82,8 @@ def end_walls(name, out, port_shift=0.0, fl_clip=None):
         u = lambda d: cx + sx * d
         block = [(u(T), 2.0), (u(clip), 2.0), (u(clip), DIAG - clip), (u(T), DIAG - T)]
         wall += prism(block, "z", 0, 53.8)
+    # Print flat, outer face on the bed and corner blocks pointing up: (x, y, z) -> (x, 53.8 - z, y).
+    wall = wall.rotate([90, 0, 0]).translate([0, 53.8, 0])
     return check(wall, out)
 
 

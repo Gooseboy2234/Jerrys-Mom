@@ -29,6 +29,12 @@ PLACEMENT = {
     "roof":  M([[1, 0, 0], [0, 1, 0], [0, 0, 1]], [0, -2.0, WALL_H]),
     "lid":   M([[0, 0, -1], [1, 0, 0], [0, -1, 0]], [W, 0, LID_TOP]),
 }
+# Revised front/rear walls are exported lying flat: (x, y, z)_upright -> (x, 53.8 - z, y).
+FLAT_END_WALL = M([[1, 0, 0], [0, 0, -1], [0, 1, 0]], [0, WALL_H, 0])
+REVISED_PLACEMENT = dict(PLACEMENT)
+for k in ("front", "rear"):
+    REVISED_PLACEMENT[k] = PLACEMENT[k] @ np.linalg.inv(FLAT_END_WALL)
+
 for k, m in PLACEMENT.items():
     assert abs(np.linalg.det(m[:3, :3]) - 1) < 1e-9, k
 
@@ -58,6 +64,6 @@ def assembly(which):
     parts = {}
     for k, rel in SETS[which].items():
         m = trimesh.load(os.path.join(H, "..", rel))
-        m.apply_transform(PLACEMENT[k])
+        m.apply_transform((REVISED_PLACEMENT if which == "revised" else PLACEMENT)[k])
         parts[k] = m
     return parts
