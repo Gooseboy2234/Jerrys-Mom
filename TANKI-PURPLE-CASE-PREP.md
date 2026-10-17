@@ -64,3 +64,7 @@ Main scenes: R2 `Purple-compute-box-editable.blend` and R3 `R3 corrected top edi
 The generator scripts are hard-coded to `/Users/ethan/Documents/OrangePiTanki`.
 Run them only on a working copy, after rebinding those paths, in Blender 4.x.
 Keep the hash checks on.
+
+## Revision 1 (17 Oct 2026)
+The roof vents moved 20mm back, and the case gets 4mm corner and lid-edge bevels.
+The front port opening moved 3.2mm left. See `tanki-revision/README.md`.
