@@ -38,6 +38,9 @@ def save(m, name):
     f = tm.faces
     tm.update_faces((f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2]))
     tm.remove_unreferenced_vertices()
+    parts = tm.split(only_watertight=False)
+    if len(parts) > 1:   # zero-volume face pairs left where coplanar faces met
+        tm = trimesh.util.concatenate([p for p in parts if abs(p.volume) >= 1e-3])
     tm.export(os.path.join(OUT, name))
     return tm
 

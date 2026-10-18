@@ -1,0 +1,6 @@
+VERIFY part 2/3: 180 corners; max |Blender - 2D| clearance 0.0426 mm; overlap flag consistent with sign in 180/180
+VERIFY binding corners (BVH overlap during swing): 117
+EXACT_BOOLEAN tightest corner P c=0.15 v=0.15 Du=0.2 h=0.2: interference volume 0.0000 mm3 over the 6.3 mm seat (0.0000 mm2 section)
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+
+Blender quit

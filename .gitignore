@@ -3,3 +3,5 @@ tanki-revision/original/
 tanki-revision/revised/
 tanki-revision/renders/
 __pycache__/
+tanki-revision/hinge-lab/**/*.stl
+tanki-revision/hinge-lab/**/out/

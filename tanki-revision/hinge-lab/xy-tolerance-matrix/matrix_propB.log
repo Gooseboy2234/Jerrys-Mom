@@ -1,0 +1,49 @@
+rebuild-with-design-params vs Blender section sym-diff area 0.01053
+PROPOSAL CLEAR=0.45 SQUEEZE=0.25 BUMP_R=0.6 EXIT=165.0  tag _propB
+pivot fit from Blender lid section: centre [-0.0002  0.    ] r 3.1981
+sections at X 33.35 vs 50.65 sym-diff area 0.00012
+NOMINAL: bore gap 0.4518  bump gap 0.4518  throat (C-space) 6.1410  gate (arm-lip) 6.1410 dir 74.9  squeeze 0.2552
+  design throat |T-B|-BUMP_R = 6.1500 (T at r 3.661); actual arm corner on R_IN at the same angle: 6.1409
+  slide up          90 deg per-side interference 9.900
+  slide back         0 deg per-side interference 9.900
+  slide down       270 deg per-side interference 9.900
+  slide forward    180 deg per-side interference 0.762
+  slide exit       165 deg per-side interference 0.132
+model_I(0,0) vs section sym-diff 2e-05
+model_I(0.05,0.05) vs section.buffer(0.05) sym-diff 0.00059
+model_I(0.15,0.15) vs section.buffer(0.15) sym-diff 0.0051
+P model delta 0 (layer stepping only): bore gap 0.3560 bump gap 0.3617 throat 5.9988 squeeze 0.3974
+profile I c=-0.05 v=-0.05: bore r 3.700 bump d 3.700 throat 6.260 (gate 6.260, cspace 6.260)
+profile I c=-0.05 v=+0.00: bore r 3.650 bump d 3.650 throat 6.183 (gate 6.183, cspace 6.183)
+profile I c=-0.05 v=+0.05: bore r 3.600 bump d 3.600 throat 6.106 (gate 6.106, cspace 6.106)
+profile I c=-0.05 v=+0.10: bore r 3.550 bump d 3.550 throat 6.028 (gate 6.028, cspace 6.028)
+profile I c=-0.05 v=+0.15: bore r 3.500 bump d 3.500 throat 5.951 (gate 5.951, cspace 5.951)
+profile I c=+0.00 v=-0.05: bore r 3.650 bump d 3.650 throat 6.218 (gate 6.218, cspace 6.218)
+profile I c=+0.00 v=+0.00: bore r 3.650 bump d 3.650 throat 6.141 (gate 6.141, cspace 6.141)
+profile I c=+0.00 v=+0.05: bore r 3.600 bump d 3.600 throat 6.064 (gate 6.064, cspace 6.064)
+profile I c=+0.00 v=+0.10: bore r 3.550 bump d 3.550 throat 5.986 (gate 5.986, cspace 5.986)
+profile I c=+0.00 v=+0.15: bore r 3.500 bump d 3.500 throat 5.908 (gate 5.908, cspace 5.908)
+profile I c=+0.05 v=-0.05: bore r 3.600 bump d 3.600 throat 6.176 (gate 6.176, cspace 6.176)
+profile I c=+0.05 v=+0.00: bore r 3.600 bump d 3.600 throat 6.099 (gate 6.099, cspace 6.099)
+profile I c=+0.05 v=+0.05: bore r 3.600 bump d 3.600 throat 6.021 (gate 6.021, cspace 6.021)
+profile I c=+0.05 v=+0.10: bore r 3.550 bump d 3.550 throat 5.944 (gate 5.944, cspace 5.944)
+profile I c=+0.05 v=+0.15: bore r 3.500 bump d 3.500 throat 5.866 (gate 5.866, cspace 5.866)
+profile I c=+0.10 v=-0.05: bore r 3.550 bump d 3.550 throat 6.135 (gate 6.135, cspace 6.135)
+profile I c=+0.10 v=+0.00: bore r 3.550 bump d 3.550 throat 6.057 (gate 6.057, cspace 6.057)
+profile I c=+0.10 v=+0.05: bore r 3.550 bump d 3.550 throat 5.979 (gate 5.979, cspace 5.979)
+profile I c=+0.10 v=+0.10: bore r 3.550 bump d 3.550 throat 5.901 (gate 5.901, cspace 5.902)
+profile I c=+0.10 v=+0.15: bore r 3.500 bump d 3.500 throat 5.823 (gate 5.823, cspace 5.823)
+profile I c=+0.15 v=-0.05: bore r 3.500 bump d 3.500 throat 6.093 (gate 6.093, cspace 6.093)
+profile I c=+0.15 v=+0.00: bore r 3.500 bump d 3.500 throat 6.016 (gate 6.016, cspace 6.016)
+profile I c=+0.15 v=+0.05: bore r 3.500 bump d 3.500 throat 5.938 (gate 5.938, cspace 5.938)
+profile I c=+0.15 v=+0.10: bore r 3.500 bump d 3.500 throat 5.859 (gate 5.859, cspace 5.859)
+profile I c=+0.15 v=+0.15: bore r 3.500 bump d 3.500 throat 5.781 (gate 5.781, cspace 5.781)
+profile P c=-0.05 v=-0.05: bore r 3.567 bump d 3.582 throat 6.023 (gate 6.023, cspace 6.023)
+profile P c=+0.00 v=+0.00: bore r 3.554 bump d 3.560 throat 5.999 (gate 5.999, cspace 5.999)
+profile P c=+0.05 v=+0.05: bore r 3.538 bump d 3.538 throat 5.974 (gate 5.974, cspace 5.974)
+profile P c=+0.10 v=+0.10: bore r 3.509 bump d 3.509 throat 5.951 (gate 5.951, cspace 5.951)
+profile P c=+0.15 v=+0.15: bore r 3.470 bump d 3.472 throat 5.929 (gate 5.929, cspace 5.929)
+LOOSEST (c=v=-0.05, Du=-0.05) slide up: per-side interference 9.900
+LOOSEST (c=v=-0.05, Du=-0.05) slide back: per-side interference 9.900
+LOOSEST (c=v=-0.05, Du=-0.05) slide down: per-side interference 9.900
+wrote 540 rows

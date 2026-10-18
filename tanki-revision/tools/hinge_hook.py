@@ -17,9 +17,9 @@ from meshlib import to_manifold, box, save, OUT
 
 SRC = "02_R3_top_vents_back_20mm_bevel4_open120_-_print_ONE.stl"
 EXIT = float(sys.argv[1]) if len(sys.argv) > 1 else 165.0
-PIVOT_R, CLEAR, WALL = 3.2, 0.3, 3.0      # 0.3 = Ethan's seat clearance
+PIVOT_R, CLEAR, WALL = 3.2, 0.35, 3.0     # 0.35: survives A1 mini layer stepping + support sag (hinge-lab)
 R_IN, R_OUT = PIVOT_R + CLEAR, PIVOT_R + CLEAR + WALL
-SQUEEZE, BUMP_R = 0.25, 0.6               # throat is 6.4 - 0.25 = 6.15 mm
+SQUEEZE, BUMP_R = 0.15, 0.6               # as built the click is ~0.04 firmer (arm tip cut at R_IN)
 SEATED_GAP = 0.27                         # bump-to-pivot gap when the lid is seated
 
 # roof-file frame: Y = case Y + 2, Z = case Z - 53.8
@@ -84,8 +84,8 @@ def build():
     roof = to_manifold(trimesh.load(f"{OUT}/{SRC}"))
     parts, bump_ts = hook_profile_parts()
     for x0, x1 in SEATS_X:
-        roof -= box(x0, x1, 139.0, BASE_REAR, BASE_TOP, 20)          # old U-seat above the base
-        roof -= box(x0, x1, BASE_REAR, 150.5, OLD_WALL_BOTTOM, 20)  # old rear wall past the base edge
+        roof -= box(x0 - 0.01, x1 + 0.01, 139.0, BASE_REAR, BASE_TOP, 20)  # old U-seat above the base (0.01 wider: no coplanar ends)
+        roof -= box(x0 - 0.01, x1 + 0.01, BASE_REAR, 150.5, OLD_WALL_BOTTOM, 20)  # old rear wall past the base edge
         for p in parts:
             roof += yz_prism(p, x0, x1)
         # keep the pivot's running clearance clear of everything

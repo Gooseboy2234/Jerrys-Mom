@@ -12,8 +12,9 @@ Changes from Ethan's current build (R2 walls/lid/hinges + R3 roof):
    (`tools/hinge_stop.py <angle>` re-runs it). Keep it under ~125°: past that the lid's
    rear edge reaches the back of the hinge seats.
 4. **Lift-off hook hinge, no caps.** Each of the roof's four U-seats is now a 3 mm-thick hook
-   that curls over the top of the lid's pivot. It opens forward and 15° up, through a 6.15 mm
-   gap (the pivot is 6.4 mm) set by a small bump on the lip. The pivot clicks past the bump
+   that curls over the top of the lid's pivot. It opens forward and 15° up, through a ~6.2 mm
+   gap (the pivot is 6.4 mm) set by a small bump on the lip. Tuned from the digital tolerance
+   test (`hinge-lab/`): 0.35 mm pivot clearance and a 0.15 mm click (as built ~0.19). The pivot clicks past the bump
    going in and out. Lifting straight up, pushing back (the stop load) and the lid's weight
    are all blocked. The four bearing caps are no longer used. To remove the lid, hold it
    between closed and ~40° open and pull it toward you and slightly up.
@@ -44,7 +45,12 @@ nothing pokes outside the beveled outline and no two parts overlap.
 
 ## Things to check on the real build
 
-- **Hook click (test pair first).** The 0.25 mm squeeze is a starting point. If it's too stiff
+- **Slicer for the roof hooks (from the A1 mini tolerance test):** tree supports ON, not
+  "build plate only", with a support interface, so the ceiling over each pivot doesn't sag
+  more than ~0.2 mm. Push the support inside each hook out sideways and clean the bottom of
+  the seat. On the **lid**, paint the seam (or use the scarf seam) away from the pivots: a seam
+  blob on a pivot is the main thing that makes the hinge rub.
+- **Hook click (test pair first).** The 0.15 mm squeeze is a starting point. If it's too stiff
   in PLA (or cracks), re-run with less: change `SQUEEZE` in `hinge_hook.py`. PETG flexes better.
   With the lid closed, nothing but the click stops it sliding forward out of the hooks.
 
