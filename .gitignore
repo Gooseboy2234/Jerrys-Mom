@@ -5,3 +5,4 @@ tanki-revision/renders/
 __pycache__/
 tanki-revision/hinge-lab/**/*.stl
 tanki-revision/hinge-lab/**/out/
+tanki-revision/pack/
