@@ -155,6 +155,8 @@ def lid(name, out):
     m -= prism(corner_cut(0, 0, 1, 1, C), "z", -1, LZ + 1)
     for cz, sz in ((0.0, 1), (LZ, -1)):
         m -= prism([(y, z) for z, y in corner_cut(cz, 0, sz, 1, C)], "x", -1, LX + 1)
+    # Print on its back (the big flat top face on the bed, rims up): (x, y, z) -> (x, LZ - z, y).
+    m = m.rotate([90, 0, 0]).translate([0, LZ, 0])
     tm = check(m, out)
     print(f"  lid material added behind bevels: {added.volume() / 1000:.2f} cm3")
     return tm, added

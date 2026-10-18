@@ -31,9 +31,12 @@ PLACEMENT = {
 }
 # Revised front/rear walls are exported lying flat: (x, y, z)_upright -> (x, 53.8 - z, y).
 FLAT_END_WALL = M([[1, 0, 0], [0, 0, -1], [0, 1, 0]], [0, WALL_H, 0])
+# The revised lid is exported lying on its back: (x, y, z)_upright -> (x, W - z, y).
+FLAT_LID = M([[1, 0, 0], [0, 0, -1], [0, 1, 0]], [0, W, 0])
 REVISED_PLACEMENT = dict(PLACEMENT)
 for k in ("front", "rear"):
     REVISED_PLACEMENT[k] = PLACEMENT[k] @ np.linalg.inv(FLAT_END_WALL)
+REVISED_PLACEMENT["lid"] = PLACEMENT["lid"] @ np.linalg.inv(FLAT_LID)
 
 for k, m in PLACEMENT.items():
     assert abs(np.linalg.det(m[:3, :3]) - 1) < 1e-9, k
