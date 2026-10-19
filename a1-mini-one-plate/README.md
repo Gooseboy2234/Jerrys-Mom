@@ -13,6 +13,11 @@ together on the bed like puzzle pieces:
 Each file comes as `.stl` and `.3mf`. Every part is already in its final spot and orientation,
 in A1 Mini bed coordinates (0–180 mm).
 
+Parts are spread as far apart as the plate allows, so you can check every neighbour in the
+slicer before you slice. The closest pair is about 4.5–5 mm apart, and most gaps are 6 mm or
+more. The two flat walls sit on the left and right, and the tall standing panels run
+front-to-back down the middle.
+
 ## Loading it in Bambu Studio
 
 **Easiest:** open `BOTH_pre-placed_on_one_plate.3mf`. If Bambu Studio asks, choose to load
@@ -26,8 +31,8 @@ of the object's bounding box:
 
 | Object | X | Y |
 |---|---|---|
-| A_SUPPORTS_OFF_pattern_parts | 90.00 | 87.72 |
-| B_SUPPORTS_ON_other_parts | 83.15 | 89.22 |
+| A_SUPPORTS_OFF_pattern_parts | 85.90 | 89.60 |
+| B_SUPPORTS_ON_other_parts | 89.65 | 89.55 |
 
 Compare the result with the picture above. **Do not press Arrange (A):** it would pull the
 interlocked groups apart.
@@ -56,15 +61,16 @@ have to stand on edge, like toast in a rack:
 | Lid | Standing, 167 mm tall | Its rim gives it the largest base of any standing option (3,000 mm²) |
 | Green toast bottom | Standing, 147 mm tall | Text plaque prints cleanly on a vertical face |
 | Hinge test coupons | **Same orientation as their parent part** | So each coupon still tests the hook the way it will really print |
-| Keepers, hatch | Tucked into the gaps (two keepers sit in the left wall's notch) | |
+| Keepers, hatch | Placed in the remaining open spots | |
 
 The source files placed **05_Left_wall** and **Green_toast_bottom** tilted, touching the bed on
 a single edge. Here they're squared up properly.
 
 ## Things to know (honest trade-offs)
 
-1. **Roof hooks need a little support.** With the roof standing, its two hinge-hook pairs (back
-   right corner, at about 20–50 mm and 110–140 mm height) stick out sideways. To keep the
+1. **Roof hooks need a little support.** With the roof standing, its two hinge-hook pairs (at
+   the back of the plate, just right of centre, at about 30–50 mm and 110–140 mm height) stick
+   out sideways. To keep the
    pattern support-free and still save the hooks: on object A, turn supports on with type
    **Tree (manual)** and paint only the hook undersides with the support-painting tool. Manual
    mode only puts supports where you paint, so the pattern stays untouched. Skip this and the
