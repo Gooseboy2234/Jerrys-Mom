@@ -6,3 +6,4 @@ __pycache__/
 tanki-revision/hinge-lab/**/*.stl
 tanki-revision/hinge-lab/**/out/
 tanki-revision/pack/
+tanki-revision/tools/*.npy

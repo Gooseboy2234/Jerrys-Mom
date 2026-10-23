@@ -19,14 +19,21 @@ Changes from Ethan's current build (R2 walls/lid/hinges + R3 roof):
    are all blocked. The four bearing caps are no longer used. To remove the lid, hold it
    between closed and ~40° open and pull it toward you and slightly up.
    (`tools/hinge_hook.py [exit_deg]`, `tools/hook_2d.py` checks the click.)
-5. **Front USB/Ethernet opening moved 3.2 mm left** (now X 93.8–161.8) so the
+5. **Access hatch 10% bigger** (hole and hatch plate scaled together, in Blender:
+   `tools/hatch_blender.py`, numbers in `tools/hatch_params.py`). Through-hole 78 x 44 -> 85.8 x 48.4 mm,
+   rebate 80 x 46 -> 88 x 50.6 mm, hatch plate 79.6 x 45.6 -> 87.6 x 50.2 mm (whole hatch 87.6 x 53.0 mm).
+   The 1.2 mm plate thickness and rebate depth are unchanged. A full 10% did not fit in the length
+   direction (screen frame in front, hinge bases behind), so the opening moved 0.7 mm toward the
+   screen and 1 mm toward the left, and the finger notch kept its old 5 mm size. Roof file:
+   `..._hook15_hatch110`; hatch file: `15_Removable_maintenance_hatch_110`.
+6. **Front USB/Ethernet opening moved 3.2 mm left** (now X 93.8–161.8) so the
    front-right corner bevel stays solid. The Pi now sits further back.
 
 ## Files (`revised/`, kept out of git)
 
 | Part | File | Notes |
 |---|---|---|
-| Roof (R3) | `02_R3_top_vents_back_20mm_bevel4_open120_hook15` | **Print this one.** Vents moved, corner bevels, 120° stop, lift-off hook seats. Replaces the R3 roof. The hooks overhang the pivot, so print with supports (the R3 project already uses tree supports). Earlier steps are kept: `..._open120` (glued caps), `..._bevel4` (106° stop). |
+| Roof (R3) | `02_R3_top_vents_back_20mm_bevel4_open120_hook15_hatch110` | **Print this one** (same as `..._hook15` below but with the 10% bigger hatch opening). Vents moved, corner bevels, 120° stop, lift-off hook seats. Replaces the R3 roof. The hooks overhang the pivot, so print with supports (the R3 project already uses tree supports). Earlier steps are kept: `..._open120` (glued caps), `..._bevel4` (106° stop). |
 | Hinge test pair | `TEST_hinge_hook_roof_coupon`, `TEST_hinge_hook_lid_coupon` | One hinge cut from the roof and lid (~11 g total). **Print these first** to check the click, the 120° stop and lift-out before the 3-hour roof. Use a brim on the lid piece; it stands 29 mm tall on a small footprint. |
 | 7" lid | `01_7in_lid_bevel4` | Corner and top-edge bevels, plus ~1.5 cm³ of reinforcement inside so the 1.2 mm rims don't open up. **Prints on its back** (big flat top face on the bed, rims up, 25.8 mm tall). The hinge pivots then print lying sideways at 12 mm height: they need a little support underneath, and the layer steps make them up to ~0.1 mm fatter at two points. Lightly sand any support scar or ridge on the pivots. |
 | Front wall | `03_Front_wall_bevel4_port_left3.2` | End bevels, port moved, small reinforcing blocks inside the corners. **Prints flat**. |
@@ -34,7 +41,8 @@ Changes from Ethan's current build (R2 walls/lid/hinges + R3 roof):
 | Left / right walls | `05_Left_wall_bevel4`, `06_Right_wall_bevel4` | Only change: a 1.6 mm 45° sliver off the **outer** vertical edge at each end. Reprint, **or sand the glued walls in place**. |
 | Floor | `Green_toast_bottom_bevel4` | 4 mm corner bevels. Reprint, **or sand/cut the corners** of the existing floor. |
 | Bearing caps (07-10) | **not needed** with the hook roof | |
-| Everything else | unchanged | Hatch, tab keepers, bumper, feet, antenna holder, riser |
+| Hatch | `15_Removable_maintenance_hatch_110` | 10% bigger in length and width to match the new opening (thickness unchanged). Green like the roof. Prints in the supplied orientation. **Replaces** the old hatch. |
+| Everything else | unchanged | Tab keepers, bumper, feet, antenna holder, riser |
 
 **Colors:** walls (all four) and lid in **grey**; floor and roof (the top under the lid, with the
 hinge hooks and hatch) in **green**.
